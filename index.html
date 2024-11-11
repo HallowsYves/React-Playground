@@ -1,20 +1,19 @@
 <html>
   <body>
     <div id="app"></div>
-    <script type="text/javascript">
-      // DOM method, select the div element by 'app' id
+    <!-- Load React Scripts -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
       const app = document.getElementById('app');
 
-      // Create new H1 element
-      const header = document.createElement('h1');
+      // Create a root to display React Components
+      const root = ReactDOM.createRoot(app);
 
-      // Create new text node for H1 element
-      const text = 'Develop. Preview. Ship.';
-      const headerContent = document.createTextNode(text)
+      // Render React code to the DOM
+      root.render(<h1>Develop. Preview. Ship.</h1>);
       
-      // Add the text to the H1 element
-      header.appendChild(headerContent);
-      app.appendChild(header)
     </script>
   </body>
 </html>
