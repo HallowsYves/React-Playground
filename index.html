@@ -5,15 +5,27 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
-    <script>
-      const app = document.getElementById('app');
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+      const app = document.getElementById("app")
+     
+      function Header() {
+         return (<h1>Develop. Preview. Ship.</h1>)
+       }
 
-      // Create a root to display React Components
+      function HomePage() {
+        return (<div>
+          {/* Nest the header component */}
+          <Header />
+        </div>
+        );
+      }
+     
       const root = ReactDOM.createRoot(app);
 
-      // Render React code to the DOM
-      root.render(<h1>Develop. Preview. Ship.</h1>);
-      
+      <!-- Since HomePage is holding Header, it is the top-level component -->
+      root.render(<HomePage />);
     </script>
   </body>
 </html>
